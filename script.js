@@ -36,3 +36,21 @@ eye.addEventListener("click", (e) => {
         eye.classList.replace("fa-eye-slash","fa-eye")
     }
 })
+
+
+const apiUrl = 'https://jsonplaceholder.typicode.com/posts/1';
+
+fetch(apiUrl)
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`Network response was not ok: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then((data) => {
+    console.log('Dummy Data API Response:', data);
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+
