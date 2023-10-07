@@ -121,11 +121,12 @@ const searchData = (e) => {
 
 
     const usersList = document.querySelectorAll(".info")
-    const term = e.target.value
+    const term = (e.target.value).toLowerCase()
+
     usersList.forEach(data => {
         const name = data.querySelector(".fullName").textContent.toLowerCase()
         const gender = data.querySelector(".gender").textContent.toLowerCase()
-
+        
         if (name.includes(term) || gender.includes(term)){
             data.style.display = "flex"
         } else {
